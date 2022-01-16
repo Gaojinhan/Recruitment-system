@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if job %}
+    <div style="margin:auto; width:50%;">
+        <h2>Job name:{{job.job_name}}</h2>
+
+        Position:
+        {{job.city_name}} <p></p>
+    </div>
+    <hr>
+    <div class="position_responsibility" style="width:600px">
+        <h3>Job Responsibility</h3>
+        <pre style="font-size:16px">{{job.job_responsibility}}
+        </pre>
+        <p></p>
+    </div><br>
+
+    <hr>
+    <div class="position_requirement" style="width:600px">
+        <h3>Job Requirement</h3>
+        <pre style="font-size:16px">{{job.job_requirement}}
+        </pre>
+    </div>
+
+    <br>
+
+    <div class="apply_position">
+        <input type="button" style="width:120px;background-color:lightblue;" value="Apply"  onclick="location.href='/resume/add/'"/>
+    </div>
+{% else %}
+    <p>No jobs available</p>
+{% endif %}
+
+{% endblock %}
